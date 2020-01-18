@@ -6,7 +6,9 @@ import restaurantJson from './restaurants.json';
 function App() {
   const restaurantNames = restaurantJson.restaurants.map((restaurant) =>
     <li key={restaurant.name}>
-      {restaurant.name}
+      <h2>{restaurant.name}</h2>
+      <img src={restaurant.image} />
+      <div>{restaurant.description}</div>
     </li>
   );
   return (
