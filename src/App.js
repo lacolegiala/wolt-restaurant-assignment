@@ -1,15 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import restaurantJson from './restaurants.json';
 
 function App() {
+  const restaurantNames = restaurantJson.restaurants.map((restaurant) =>
+    <li key={restaurant.name}>
+      {restaurant.name}
+    </li>
+  );
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Wolt Restaurant List
         </p>
+        <ul>{restaurantNames}</ul>
         <a
           className="App-link"
           href="https://reactjs.org"
