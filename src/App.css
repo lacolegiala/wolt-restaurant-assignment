@@ -22,6 +22,19 @@ ul {
   grid-row-gap: 20px;
 }
 
+@media (max-width: 850px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 h2 {
   color: #222222;
   font-size: 18px;
