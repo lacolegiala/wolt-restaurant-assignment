@@ -6,8 +6,10 @@ function App() {
   const restaurantNames = restaurantJson.restaurants.map((restaurant) =>
     <li key={restaurant.name}>
       <img src={restaurant.image} alt={'Picture of ' + restaurant.name} />
-      <h2>{restaurant.name}</h2>
-      <div>{restaurant.description}</div>
+      <div className="card-texts">
+        <h2>{restaurant.name}</h2>
+        <div>{restaurant.description}</div>
+      </div>
     </li>
   );
   return (
