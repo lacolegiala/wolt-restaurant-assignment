@@ -7,8 +7,11 @@ function App() {
     <li key={restaurant.name}>
       <img src={restaurant.image} alt={'Picture of ' + restaurant.name} />
       <div className="card-texts">
-        <h2>{restaurant.name}</h2>
-        <div>{restaurant.description}</div>
+        <div className="name-description">
+          <h2>{restaurant.name}</h2>
+          <div>{restaurant.description}</div>
+        </div>
+        <div className="tags">{restaurant.tags.join(', ')}</div>
       </div>
     </li>
   );

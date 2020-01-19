@@ -23,6 +23,7 @@ ul {
 }
 
 h2 {
+  color: #222222;
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 8px;
@@ -38,13 +39,23 @@ img {
   height: 214px;
   object-fit: cover;
   display: block;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .card-texts {
-  padding: 15px;
   border: 1px solid #cccccc;
   border-top: 0;
   border-radius: 0px 0px 5px 5px;
+}
+
+.name-description {
+  padding: 15px;
+}
+
+.tags {
+  padding: 5px 15px;
+  border-top: 1px dashed #cccccc;
+  font-size: 12px;
 }
 
 .App-header {
