@@ -17,7 +17,12 @@ function App() {
     </li>
   );
   function sortRestaurants() {
-    console.log('The button was clicked.');
+    const restaurantList = Array.from(restaurantJson.restaurants);
+    restaurantList.sort(
+      (a, b) => a.name.localeCompare(b.name, undefined, {sensitivity: 'base'})
+    );
+    console.log(restaurantJson.restaurants)
+    console.log(restaurantList);
   }
   return (
     <div className="App">
