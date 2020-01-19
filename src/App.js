@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import restaurantJson from './restaurants.json';
 
+
 function App() {
   const restaurantNames = restaurantJson.restaurants.map((restaurant) =>
     <li key={restaurant.name}>
@@ -15,12 +16,16 @@ function App() {
       </div>
     </li>
   );
+  function sortRestaurants() {
+    console.log('The button was clicked.');
+  }
   return (
     <div className="App">
       <header className="App-header">
         <p>
           Wolt Restaurant List
         </p>
+        <button onClick={sortRestaurants}>Sort</button>
         <ul>{restaurantNames}</ul>
       </header>
     </div>
