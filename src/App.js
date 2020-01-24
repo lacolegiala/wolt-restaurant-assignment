@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import restaurantJson from './restaurants.json';
 
 
 function App() {
-  const restaurantNames = restaurantJson.restaurants.map((restaurant) =>
+  const [ isAscending, setIsAscending ] = useState(true);
+
+  const restaurantList = Array.from(restaurantJson.restaurants);
+  function sortRestaurantsAscending() {
+    restaurantList.sort(
+      (a, b) => a.name.localeCompare(b.name, undefined, {sensitivity: 'base'})
+    );
+  }
+  function sortRestaurantsDescending() {
+    restaurantList.sort(
+      (a, b) => b.name.localeCompare(a.name, undefined, {sensitivity: 'base'})
+    );
+  }
+  {isAscending === true ? sortRestaurantsAscending() : sortRestaurantsDescending()};
+
+  const restaurantNames = restaurantList.map((restaurant) =>
     <li key={restaurant.name}>
       <img src={restaurant.image} alt={'Picture of ' + restaurant.name} />
       <div className="card-texts">
@@ -16,13 +31,14 @@ function App() {
       </div>
     </li>
   );
-  function sortRestaurants() {
-    const restaurantList = Array.from(restaurantJson.restaurants);
-    restaurantList.sort(
-      (a, b) => a.name.localeCompare(b.name, undefined, {sensitivity: 'base'})
-    );
-    console.log(restaurantJson.restaurants)
-    console.log(restaurantList);
+
+  function setRestaurantOrder() {
+    if (isAscending === true) {
+      setIsAscending(false);
+    }
+    else {
+      setIsAscending(true);
+    }
   }
   return (
     <div className="App">
@@ -30,8 +46,12 @@ function App() {
         <p>
           Wolt Restaurant List
         </p>
-        <button onClick={sortRestaurants}>Sort</button>
-        <ul>{restaurantNames}</ul>
+        <button onClick={setRestaurantOrder}>
+          {isAscending === true ? 'Sort descending' : 'Sort ascending'}
+        </button>
+        <ul>
+          {restaurantNames}
+        </ul>
       </header>
     </div>
   );
