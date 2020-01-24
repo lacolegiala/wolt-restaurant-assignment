@@ -17,7 +17,12 @@ function App() {
       (a, b) => b.name.localeCompare(a.name, undefined, {sensitivity: 'base'})
     );
   }
-  {isAscending === true ? sortRestaurantsAscending() : sortRestaurantsDescending()};
+  if (isAscending === true) {
+    sortRestaurantsAscending();
+  }
+  else {
+    sortRestaurantsDescending();
+  }
 
   const restaurantNames = restaurantList.map((restaurant) =>
     <li key={restaurant.name}>
