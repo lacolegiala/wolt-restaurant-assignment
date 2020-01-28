@@ -1,3 +1,9 @@
+# Wolt restaurant assignment for summer 2020
+
+This is a web page that displays 50 Wolt restaurants. The restaurant cards can be sorted alphabetically, both in ascending and descending order.
+
+[The assignment](https://github.com/woltapp/summer2020)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
